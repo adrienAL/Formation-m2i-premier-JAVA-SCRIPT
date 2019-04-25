@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="./index.css">
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script src="./source.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Indice de masse corporelle</h2>
+        <form action="/action_page.php" method="POST">
+
+            <div class="form-group row"> <!-- On creer une ligne-->
+                <!-- On defini les colonnes (dans une page web il y a 12 colonnes)-->
+                <label for="txtNom" class="col-sm-2 col-form-label">Nom:</label> <!--ici on defini une colonne qui occupe 2 12eme de l'écran-->
+                <div class="col-sm-4 col-form-label"> <!--ici 4 12eme-->
+                    <input type="text" class="form-control" id="txtNom" placeholder="Nom" name="txtNom">
+                </div>
+
+                <label for="txtPrenom" class="col-sm-2 col-form-label">Prénom:</label>
+                <div class="col-sm-4 col-form-label">
+                    <input type="text" class="form-control" id="txtPrenom" placeholder="Nom" name="txtPrenom">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="nbrPoid" class="col-sm-2 col-form-label">Poids:</label>
+                <div class="col-sm-4 col-form-label">
+                    <input type="number" class="form-control" id="nbrPoid" placeholder="Poids" name="nbrPoid" min="30.0"
+                        step="0.1">
+                </div>
+
+                <label for="nbrTaille" class="col-sm-2 col-form-label">Taille:</label>
+                <div class="col-sm-4 col-form-label">
+                    <input type="number" class="form-control" id="nbrTaille" placeholder="Taille" name="nbrTaille"
+                        min="1.0" max="2.4" step="0.01">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="lstSexe" class="col-sm-2 col-form-label">Sexe:</label>
+                <div class="col-sm-10 col-form-label">
+                    <select name="lstSexe" id="lstSexe" class="form-control">
+                        <option value="MASCULIN">MASCULIN</option>
+                        <option value="FEMININ">FEMININ</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="button" class="btn btn-outline-primary btn-block" onclick="Traitement()">CALCULER</button>
+            </div>
+
+            <div class="form-group row">
+                <label for="txtIMC" class="col-sm-2 col-form-label">Votre IMC:</label>
+                <div class="col-sm-10 col-form-label">
+                    <input type="text" class="form-control" id="txtIMC" name="txtIMC" readonly>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="txtPoidMin" class="col-sm-2 col-form-label">Poids Minimum:</label>
+                <div class="col-sm-10 col-form-label">
+                    <input type="text" class="form-control" id="txtPoidMin" name="txtPoidMin" readonly>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="txtPoidMax" class="col-sm-2 col-form-label">Poids Maximum:</label>
+                <div class="col-sm-10 col-form-label">
+                    <input type="text" class="form-control" id="txtPoidMax" name="txtPoidMax" readonly>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="txtPoidIdeal" class="col-sm-2 col-form-label">Poids Ideal:</label>
+                <div class="col-sm-10 col-form-label">
+                    <input type="text" class="form-control" id="txtPoidIdeal" name="txtPoidIdeal" readonly>
+                </div>
+            </div>
+
+            <div class="form-group row" id="condIMC">
+                <label  for="txtDiagnost" class="col-sm-2 col-form-label">Diagnostique:</label>
+                <div class="col-sm-10 col-form-label">
+                    <input type="text" class="form-control" id="txtDiagnost" name="txtDiagnost" readonly>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+
+</html>
